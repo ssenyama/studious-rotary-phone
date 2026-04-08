@@ -1,0 +1,25 @@
+name: Deploy to Netlify
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Build
+        run: |
+          # Add your build commands here
+          echo "Building the project..."
+
+      - name: Deploy to Netlify
+        uses: nwtgck/actions-netlify@v1.1.1
+        with:
+          publish-dir: ./public
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          production-deploy-id: 'your_production_deploy_id'
