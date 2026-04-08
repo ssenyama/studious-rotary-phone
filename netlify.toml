@@ -1,0 +1,12 @@
+[build]
+  publish = "./"
+
+[build.environment]
+  GOOGLE_SHEETS_API_KEY = "your_google_sheets_api_key"
+  ANOTHER_VARIABLE = "your_value"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  force = true
